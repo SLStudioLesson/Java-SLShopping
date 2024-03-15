@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!-- フラグメントの定義 -->
+<html xmlns:th="http://www.thymeleaf.org"
+    th:fragment="layout(title, link, contents)">
+<head>
+<meta charset="UTF-8">
+<title th:replace="${title}">共通部品</title>
+<!-- Google font-->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+<!-- Required Fremwork -->
+<link rel="stylesheet" th:href="@{/css/bootstrap/css/bootstrap.min.css}" type="text/css">
+<!-- waves.css -->
+<link rel="stylesheet" th:href="@{/pages/waves/css/waves.min.css}" type="text/css" media="all">
+<!-- themify icon -->
+<link rel="stylesheet" th:href="@{/icon/themify-icons/themify-icons.css}" type="text/css">
+<!-- font-awesome-n -->
+<link rel="stylesheet" th:href="@{/css/font-awesome-n.min.css}" type="text/css">
+<link rel="stylesheet" th:href="@{/css/font-awesome.min.css}" type="text/css">
+<!-- scrollbar.css -->
+<link rel="stylesheet" th:href="@{/css/jquery.mCustomScrollbar.css}" type="text/css">
+<!-- style.css -->
+<link rel="stylesheet" th:href="@{/css/style.css}" type="text/css">
+<link th:replace="${link}">
+</head>
+<body>
+    <!-- Pre-loader start -->
+    <div class="theme-loader">
+      <div class="loader-track">
+        <div class="preloader-wrapper">
+          <div class="spinner-layer spinner-blue">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+              <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+          <div class="spinner-layer spinner-red">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+              <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+
+          <div class="spinner-layer spinner-yellow">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+              <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+
+          <div class="spinner-layer spinner-green">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+              <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Pre-loader end -->
+    <div id="pcoded" class="pcoded">
+      <div class="pcoded-container navbar-wrapper">
+        <div th:replace="~{layout/header :: header}"></div>
+        <div class="pcoded-main-container">
+          <div class="pcoded-wrapper">
+            <div th:replace="~{layout/sidebar :: sidebar}"></div>
+            <div th:replace="${contents}"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Required Jquery -->
+    <script type="text/javascript" th:src="@{/js/jquery/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery-ui/jquery-ui.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/popper.js/popper.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap/js/bootstrap.min.js}"></script>
+    <!-- waves js -->
+    <script type="text/javascript" th:src="@{/pages/waves/js/waves.min.js}"></script>
+    <!-- jquery slimscroll js -->
+    <script type="text/javascript" th:src="@{/js/jquery-slimscroll/jquery.slimscroll.js}"></script>
+
+    <!-- slimscroll js -->
+    <script type="text/javascript" th:src="@{/js/jquery.mCustomScrollbar.concat.min.js}"></script>
+
+    <!-- menu js -->
+    <script type="text/javascript" th:src="@{/js/pcoded.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/vertical/vertical-layout.min.js}"></script>
+
+    <script type="text/javascript" th:src="@{/js/script.js}"></script>
+    <script type="text/javascript" th:src="@{/js/common.js}"></script>
+</body>
+</html>

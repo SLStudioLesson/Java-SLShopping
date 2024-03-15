@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+  <div th:fragment="message">
+    <div th:if="${success_message != null}" class="alert alert-success text-center" th:text="${success_message}"></div>
+    <div th:if="${error_message != null}" class="alert alert-danger text-center" th:text="${error_message}"></div>
+  </div>
+
+  <div th:fragment="confirm_modal" class="modal fade text-center" id="confirmModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">削除確認</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <div class="modal-body">
+          <span id="confirmText">本当に削除しますか</span>
+        </div>
+
+        <div class="modal-footer">
+          <a class="btn btn-success" href="" id="yesButton">はい</a>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">いいえ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

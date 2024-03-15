@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>ログイン - SLショッピング管理システム</title>
+  <!-- Google font-->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+  <!-- Required Fremwork -->
+  <link rel="stylesheet" th:href="@{/css/bootstrap/css/bootstrap.min.css}" type="text/css">
+  <!-- waves.css -->
+  <link rel="stylesheet" th:href="@{/pages/waves/css/waves.min.css}" type="text/css" media="all">
+  <!-- themify icon -->
+  <link rel="stylesheet" th:href="@{/icon/themify-icons/themify-icons.css}" type="text/css">
+  <!-- font-awesome-n -->
+  <link rel="stylesheet" th:href="@{/css/font-awesome-n.min.css}" type="text/css">
+  <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}" type="text/css">
+  <!-- scrollbar.css -->
+  <link rel="stylesheet" th:href="@{/css/jquery.mCustomScrollbar.css}" type="text/css">
+  <!-- style.css -->
+  <link rel="stylesheet" th:href="@{/css/style.css}" type="text/css">
+</head>
+
+<body>
+  <!-- Pre-loader start -->
+  <div class="theme-loader">
+      <div class="loader-track">
+          <div class="preloader-wrapper">
+              <div class="spinner-layer spinner-blue">
+                  <div class="circle-clipper left">
+                      <div class="circle"></div>
+                  </div>
+                  <div class="gap-patch">
+                      <div class="circle"></div>
+                  </div>
+                  <div class="circle-clipper right">
+                      <div class="circle"></div>
+                  </div>
+              </div>
+              <div class="spinner-layer spinner-red">
+                  <div class="circle-clipper left">
+                      <div class="circle"></div>
+                  </div>
+                  <div class="gap-patch">
+                      <div class="circle"></div>
+                  </div>
+                  <div class="circle-clipper right">
+                      <div class="circle"></div>
+                  </div>
+              </div>
+
+              <div class="spinner-layer spinner-yellow">
+                  <div class="circle-clipper left">
+                      <div class="circle"></div>
+                  </div>
+                  <div class="gap-patch">
+                      <div class="circle"></div>
+                  </div>
+                  <div class="circle-clipper right">
+                      <div class="circle"></div>
+                  </div>
+              </div>
+
+              <div class="spinner-layer spinner-green">
+                  <div class="circle-clipper left">
+                      <div class="circle"></div>
+                  </div>
+                  <div class="gap-patch">
+                      <div class="circle"></div>
+                  </div>
+                  <div class="circle-clipper right">
+                      <div class="circle"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Pre-loader end -->
+
+    <section class="login-block">
+        <!-- Container-fluid starts -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <!-- Authentication card start -->
+
+                        <form class="md-float-material form-material" th:action="@{/login}" method="post">
+                            <div class="text-center">
+                                <img class="img-fluid img-60" th:src="@{/images/logo.svg}">
+                                <h2>SLショッピング</h2>
+                            </div>
+                            <div class="auth-box card">
+                                <div class="card-block">
+                                    <div class="row m-b-20">
+                                        <div class="col-md-12">
+                                            <h3 class="text-center">ログイン</h3>
+                                        </div>
+                                    </div>
+                                    <div th:if="${param.error}">
+                                      <p class="text-danger">ユーザ名かパスワードが正しくありません</p>
+                                    </div>
+                                    <div th:if="${param.logout}">
+                                      <p class="text-warning">ログアウトしました</p>
+                                    </div>
+                                    <div class="form-group form-primary">
+                                        <label>メールアドレス</label>
+                                        <input type="text" name="email" class="form-control">
+                                        <span class="form-bar"></span>
+                                    </div>
+                                    <div class="form-group form-primary">
+                                        <label>パスワード</label>
+                                        <input type="password" name="password" class="form-control">
+                                        <span class="form-bar"></span>
+                                    </div>
+                                    <div class="row m-t-30">
+                                        <div class="col-md-12">
+                                            <button type="submit" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">ログイン</button>
+                                        </div>
+                                    </div>
+                                    <hr/>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- end of form -->
+                </div>
+                <!-- end of col-sm-12 -->
+            </div>
+            <!-- end of row -->
+        </div>
+        <!-- end of container-fluid -->
+    </section>
+    <!-- Warning Section Starts -->
+<!-- Required Jquery -->
+<script type="text/javascript" th:src="@{/js/jquery/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery-ui/jquery-ui.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/popper.js/popper.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap/js/bootstrap.min.js}"></script>
+<!-- waves js -->
+<script th:src="@{/pages/waves/js/waves.min.js}"></script>
+<!-- jquery slimscroll js -->
+<script type="text/javascript" th:src="@{/js/jquery-slimscroll/jquery.slimscroll.js}"></script>
+<script type="text/javascript" th:src="@{/js/common-pages.js}"></script>
+<script type="text/javascript" th:src="@{/js/script.js}"></script>
+</body>
+
+</html>
